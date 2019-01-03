@@ -1,5 +1,5 @@
 {
-  "name": "tle",
+  "name": "tle.js",
   "version": "1.0.0",
   "description": "Javascript API for HTTP REST two line element database.",
   "main": "dist/tle.js",

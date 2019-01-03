@@ -16,6 +16,8 @@ module.exports = {
   },
   output: {
     filename: 'tle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    library: 'Tle',
+    libraryTarget: 'umd2'
   }
 };
