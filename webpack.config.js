@@ -1,7 +1,7 @@
-const path = require('path');
+import path from "path";
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: './src/index.ts',
   module: {
     rules: [
       {
