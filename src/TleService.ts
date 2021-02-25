@@ -2,7 +2,7 @@ import Tle from "./Tle";
 
 export default class TleService {
 
-    private URL: string = 'https://ivanstanojevic.me/api/tle';
+    private URL: string = "https://tle.ivanstanojevic.me/api/tle";
 
     public search(query: string): Promise<Tle[]> {
         return new Promise((resolve, reject) => {

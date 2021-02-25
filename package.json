@@ -1,16 +1,22 @@
 {
-  "name": "tle.js",
-  "version": "1.0.1",
+  "name": "tle-client",
+  "version": "1.0.2",
   "description": "Javascript API for HTTP REST two line element database.",
   "main": "dist/tle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc ./node_modules/.bin/_mocha 'tests/**/*.ts'",
     "build": "webpack"
   },
   "author": "Ivan Stanojevic",
   "license": "ISC",
   "devDependencies": {
+    "@testdeck/mocha": "^0.1.2",
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
     "ts-loader": "^5.3.2",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^9.1.1",
     "typescript": "^3.2.2",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2"
