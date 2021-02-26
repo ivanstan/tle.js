@@ -1,5 +1,5 @@
-import Tle from './src/Tle';
-import TleService from './src/TleService';
+import { Tle } from './src/Tle';
+import { TleProvider } from './src/TleProvider';
 
-export default TleService;
-export {Tle};
+export { TleProvider };
+export { Tle };

@@ -3,7 +3,7 @@ export enum LineNumber {
   LINE2 = 2,
 }
 
-export default class Tle {
+export class Tle {
   public satelliteId: number;
   public name: string;
   public line1: string;
@@ -16,20 +16,30 @@ export default class Tle {
     this.line2 = tleModel.line2;
   }
 
+  getLine(lineNumber: LineNumber): string {
+    if (lineNumber === LineNumber.LINE1) {
+      return this.line1;
+    }
+
+    if (lineNumber === LineNumber.LINE2) {
+      return this.line2;
+    }
+  }
+
   getLineNumber(lineNumber: LineNumber): number {
-    const line = this['line' + lineNumber];
+    const line = this.getLine(lineNumber);
 
     return parseInt(line.substring(0, 1));
   }
 
   getLineChecksum(lineNumber: LineNumber): number {
-    const line = this['line' + lineNumber];
+    const line = this.getLine(lineNumber);
 
     return parseInt(line.substring(68, 69));
   }
 
   getSatelliteId(lineNumber: LineNumber): number {
-    const line = this['line' + lineNumber];
+    const line = this.getLine(lineNumber);
 
     return parseInt(line.substring(2, 7));
   }
