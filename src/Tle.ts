@@ -24,6 +24,8 @@ export class Tle {
     if (lineNumber === LineNumber.LINE2) {
       return this.line2;
     }
+
+    return '';
   }
 
   getLineNumber(lineNumber: LineNumber): number {
