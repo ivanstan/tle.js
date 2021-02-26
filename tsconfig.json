@@ -5,6 +5,9 @@
     "noImplicitAny": false,
     "module": "es6",
     "target": "es2015",
-    "allowJs": true
-  }
+    "allowJs": true,
+  },
+  "exclude": [
+    "./tests"
+  ]
 }
