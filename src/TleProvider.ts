@@ -16,7 +16,7 @@ export class TleProvider {
     const data: any = await response.json();
 
     const result: Tle[] = [];
-    data.members.forEach(item => result.push(new Tle(item)));
+    data.members.forEach((item: any) => result.push(new Tle(item)));
 
     return result;
   }
