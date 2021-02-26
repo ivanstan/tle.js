@@ -1,4 +1,4 @@
-import Tle from "./Tle";
+import { Tle } from "./Tle";
 
 export class TleProvider {
 
