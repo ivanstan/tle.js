@@ -1,6 +1,6 @@
 import { suite, test } from "@testdeck/mocha";
 import * as _chai from "chai";
-import Tle, { LineNumber } from "../src/Tle";
+import { LineNumber, Tle } from "../src/Tle";
 import { SampleTleFactory } from "../src/SampleTleFactory";
 
 @suite

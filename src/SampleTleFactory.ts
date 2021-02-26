@@ -1,4 +1,4 @@
-import Tle from "../src/Tle";
+import { Tle } from "./Tle";
 
 export class SampleTleFactory {
   public static _satelliteId: number = 43550;
