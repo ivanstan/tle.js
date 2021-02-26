@@ -2,7 +2,7 @@ import { Tle } from "./Tle";
 
 export class TleProvider {
 
-  private static URL: string = "https://tle.ivanstanojevic.me/api/tle";
+  private static URL: string = "https://tle.ivanstanojevic.me";
 
   public async search(query: string | null = null): Promise<Tle[]> {
 
