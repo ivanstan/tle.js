@@ -68,15 +68,15 @@ class TleModelUnitTest {
   }
 
   @test 'should retrieve proper first time derivative of mean motion'() {
-    _chai.expect(this.tle.getFirstTimeDerivativeOfMeanMotionRaw()).to.equal(' .00013513');
+    _chai.expect(this.tle.getFirstTimeDerivativeOfMeanMotionRaw()).to.equal('.00013513');
   }
 
   @test 'should retrieve proper second time derivative of mean motion'() {
-    _chai.expect(this.tle.getSecondTimeDerivativeOfMeanMotionRaw()).to.equal(' 00000-0');
+    _chai.expect(this.tle.getSecondTimeDerivativeOfMeanMotionRaw()).to.equal('00000-0');
   }
 
   @test 'should retrieve proper bstar drag term'() {
-    _chai.expect(this.tle.getBstarDragTermRaw()).to.equal(' 18402-3');
+    _chai.expect(this.tle.getBstarDragTermRaw()).to.equal('18402-3');
   }
 
   @test 'should retrieve ephemeris type'() {
@@ -91,7 +91,7 @@ class TleModelUnitTest {
    * Line 2 Tests
    */
   @test 'should return orbital inclination'() {
-    _chai.expect(this.tle.getInclinationRaw()).to.equal(' 51.6389');
+    _chai.expect(this.tle.getInclinationRaw()).to.equal('51.6389');
   }
 
   @test 'should return right ascensions of ascending node'() {
@@ -103,7 +103,7 @@ class TleModelUnitTest {
   }
 
   @test 'should return argument of perigee'() {
-    _chai.expect(this.tle.getArgumentOfPerigeeRaw()).to.equal(' 67.0956');
+    _chai.expect(this.tle.getArgumentOfPerigeeRaw()).to.equal('67.0956');
   }
 
   @test 'should return mean anomaly'() {
@@ -115,7 +115,7 @@ class TleModelUnitTest {
   }
 
   @test 'should return revolution number'() {
-    _chai.expect(this.tle.getRevolutionNumberRaw()).to.equal(' 1980');
+    _chai.expect(this.tle.getRevolutionNumberRaw()).to.equal('1980');
   }
 
 }
