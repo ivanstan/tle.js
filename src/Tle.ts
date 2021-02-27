@@ -25,149 +25,99 @@ export class Tle {
     return '';
   }
 
-  getLineNumber(lineNumber: LineNumber): number {
+  getLineNumberRaw(lineNumber: LineNumber): string {
     const line = this.getLine(lineNumber);
 
-    return parseInt(line.substring(0, 1));
+    return line.substring(0, 1);
   }
 
-  getLineChecksum(lineNumber: LineNumber): number {
+  getLineChecksumRaw(lineNumber: LineNumber): string {
     const line = this.getLine(lineNumber);
 
-    return parseInt(line.substring(68, 69));
+    return line.substring(68, 69);
   }
 
-  getSatelliteId(lineNumber: LineNumber): number {
+  getSatelliteIdRaw(lineNumber: LineNumber): string {
     const line = this.getLine(lineNumber);
 
-    return parseInt(line.substring(2, 7));
-  }
-
-  getDate() {
-    let year = parseInt(this.line1.substring(18, 20));
-    year = Tle.formatYear(year);
-
-    let epoch: number = parseFloat(this.line1.substring(20, 32));
-    let days: number = Math.floor(epoch);
-
-    let date = new Date(Date.UTC(year, 0, days));
-
-    let faction = Math.round(epoch - days);
-
-    faction *= 24; // hours
-    let hours = Math.round(faction);
-    faction -= hours;
-
-    faction *= 60; // minutes
-    let minutes = Math.round(faction);
-    faction -= minutes;
-
-    faction *= 60; // seconds
-    let seconds = Math.round(faction);
-    faction -= seconds;
-
-    faction *= 1000; // milliseconds
-    let milliseconds = Math.round(faction);
-
-    date.setUTCHours(hours);
-    date.setUTCMinutes(minutes);
-    date.setUTCSeconds(seconds);
-    date.setUTCMilliseconds(milliseconds);
-
-    return date;
-  }
-
-  static formatYear(twoDigitYear: number) {
-    if (twoDigitYear < 57) {
-      twoDigitYear += 2000;
-    } else {
-      twoDigitYear += 1900;
-    }
-
-    return twoDigitYear;
+    return line.substring(2, 7);
   }
 
   /**
    * Line 1 Data
    */
-  getClassification(): string {
+  getClassificationRaw(): string {
     return this.line1.substring(7, 8);
   }
 
-  getLaunchYear(fourDigits: boolean = false): number {
-    const year = parseInt(this.line1.substring(9, 11));
-
-    if (fourDigits) {
-      return Tle.formatYear(year);
-    }
-
-    return year;
+  getLaunchYearRaw(fourDigits: boolean = false): string {
+    return this.line1.substring(9, 11);
   }
 
-  getLaunchNumberOfTheYear(): string {
+  getLaunchNumberOfTheYearRaw(): string {
     return this.line1.substring(11, 14);
   }
 
-  getLaunchPiece(): string {
+  getLaunchPieceRaw(): string {
     return this.line1.substring(14, 17);
   }
 
-  getEpochYear(): string {
+  getEpochYearRaw(): string {
     return this.line1.substring(18, 20);
   }
 
-  getEpochDay(): string {
+  getEpochDayRaw(): string {
     return this.line1.substring(20, 32);
   }
 
   getFirstTimeDerivativeOfMeanMotionRaw(): string {
-    return this.line1.substring(34, 43);
+    return this.line1.substring(33, 43);
   }
 
   getSecondTimeDerivativeOfMeanMotionRaw(): string {
-    return this.line1.substring(45, 52);
+    return this.line1.substring(44, 52);
   }
 
   getBstarDragTermRaw(): string {
-    return this.line1.substring(54, 61);
+    return this.line1.substring(53, 61);
   }
 
-  getEphemerisType(): string {
+  getEphemerisTypeRaw(): string {
     return this.line1.substring(62, 63);
   }
 
-  getElementNumber(): string {
-    return this.line1.substring(65, 68);
+  getElementNumberRaw(): string {
+    return this.line1.substring(64, 68);
   }
 
   /**
    * Line 2 Data
    */
-  getInclination(): number {
-    return parseFloat(this.line2.substring(8, 16));
+  getInclinationRaw(): string {
+    return this.line2.substring(8, 16);
   }
 
-  getRaan(): number {
-    return parseFloat(this.line2.substring(17, 25));
+  getRightAscensionOfAscendingNodeRaw(): string {
+    return this.line2.substring(17, 25);
   }
 
-  getRawEccentricity(): string {
+  getEccentricityRaw(): string {
     return this.line2.substring(26, 33)
   }
 
-  getArgumentOfPerigee(): number {
-    return parseFloat(this.line2.substring(34, 42));
+  getArgumentOfPerigeeRaw(): string {
+    return this.line2.substring(34, 42);
   }
 
-  getMeanAnomaly(): number {
-    return parseFloat(this.line2.substring(43, 51));
+  getMeanAnomalyRaw(): string {
+    return this.line2.substring(43, 51);
   }
 
-  getMeanMotion(): number {
-    return parseFloat(this.line2.substring(52, 63));
+  getMeanMotionRaw(): string {
+    return this.line2.substring(52, 63);
   }
 
-  getRevolutionNumber(): number {
-    return parseInt(this.line2.substring(63, 68));
+  getRevolutionNumberRaw(): string {
+    return this.line2.substring(63, 68);
   }
 }
