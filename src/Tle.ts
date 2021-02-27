@@ -1,7 +1,4 @@
-export enum LineNumber {
-  LINE1 = 1,
-  LINE2 = 2,
-}
+import {LineNumber} from "./LineNumber";
 
 export class Tle {
   public satelliteId: number;
