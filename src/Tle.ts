@@ -5,8 +5,10 @@ export class Tle {
   public name: string
   public line1: string
   public line2: string
+  public raw: any
 
   constructor(tleModel: any) {
+    this.raw = tleModel
     this.satelliteId = tleModel.satelliteId
     this.name = tleModel.name
     this.line1 = tleModel.line1
